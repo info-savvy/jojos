@@ -308,8 +308,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         ok.textContent='Pop in a valid email and we\u2019ll be in touch.';
         return;
       }
-      ok.textContent='You\u2019re on the list \u2014 check your inbox to confirm.';
-      setTimeout(function(){ form.reset(); }, 400);
+     ok.textContent='You’re on the list — check your inbox to confirm.';
+
+window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({
+    event: 'newsletter_signup',
+    form_name: 'mailchimp',
+    page: location.pathname
+});
+
+setTimeout(function () {
+    form.reset();
+}, 400);
     });
   </script>
 </body>
