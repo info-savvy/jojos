@@ -255,12 +255,15 @@
         <h3>On the list</h3>
         <p>Be the first to know dates, line&#8209;ups and new acts.</p>
         <!-- Wire `action` to your mailing tool (Mailchimp / Flodesk / Formspree). JS gives a no-backend confirmation as a fallback. -->
-        <form id="notifyForm" novalidate>
-          <input type="text" name="company" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-          <input type="email" name="email" id="email" placeholder="your@email.co.za" required autocomplete="email" inputmode="email">
+        <form id="notifyForm" method="post" target="mcHidden" novalidate
+              action="https://mavericks.us13.list-manage.com/subscribe/post?u=ecb533d36c67cbfd9b15175e3&amp;id=ecf8b7083f&amp;f_id=007e26e8f0">
+          <input type="email" name="EMAIL" id="email" placeholder="your@email.co.za" required autocomplete="email" inputmode="email">
+          <input type="hidden" name="tags" value="7233522">
+          <div class="hp" aria-hidden="true"><input type="text" name="b_ecb533d36c67cbfd9b15175e3_ecf8b7083f" tabindex="-1" value=""></div>
           <button class="btn btn--solid" type="submit">Join the list</button>
         </form>
         <p class="ok" id="ok" role="status" aria-live="polite"></p>
+        <iframe name="mcHidden" class="hp" tabindex="-1" aria-hidden="true" title="Mailchimp"></iframe>
       </div>
     </section>
   </main>
