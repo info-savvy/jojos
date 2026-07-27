@@ -281,12 +281,14 @@
     setTimeout(function(){ if(sign) sign.classList.remove('igniting'); }, 1900);
     var form=document.getElementById('notifyForm'), ok=document.getElementById('ok');
     form.addEventListener('submit', function(e){
-      e.preventDefault();
-      if(form.company.value){ return; }
-      var v=form.email.value.trim();
-      if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v)){ ok.textContent='Pop in a valid email and we\u2019ll be in touch.'; return; }
-      ok.textContent='You\u2019re on the list.';
-      form.reset();
+      var v=form.EMAIL.value.trim();
+      if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v)){
+        e.preventDefault();
+        ok.textContent='Pop in a valid email and we\u2019ll be in touch.';
+        return;
+      }
+      ok.textContent='You\u2019re on the list \u2014 check your inbox to confirm.';
+      setTimeout(function(){ form.reset(); }, 400);
     });
   </script>
 </body>
